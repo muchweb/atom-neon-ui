@@ -1,11 +1,6 @@
 @import "ui-variables";
 @modified-icon-width: 8px;
 
-
-
-
-
-
 @-webkit-keyframes neon-tab-appearance {
     0% {
         transform: translateY(@tab-height);
@@ -27,7 +22,6 @@
     line-height: @tab-height;
     color: @text-color;
     -webkit-animation: neon-tab-appearance 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
-    // box-shadow: 0 -8px 8px -8px black inset;
 
     .close-icon {
       right: 10px;
@@ -42,7 +36,6 @@
     }
 
     &.modified:not(:hover) .close-icon {
-      right: 0;
       top: @tab-height/2 - @modified-icon-width/2 + 1px;
       width: @modified-icon-width;
       height: @modified-icon-width;

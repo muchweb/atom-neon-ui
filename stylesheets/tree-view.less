@@ -5,8 +5,7 @@
   background: @tree-view-background-color;
 
   .selected:before {
-  	background: #444;
-    box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
+  	color: @background-color-selected;
   }
 }
 
@@ -17,10 +16,6 @@
 
   &:focus {
     background: #282828;
-
-    .selected:before {
-      background: @background-color-selected;
-    }
 
     .selected > .name,
     .selected > .name:before,
