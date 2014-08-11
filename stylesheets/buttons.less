@@ -8,7 +8,15 @@
   &:hover {
     color: @text-color-highlight;
     background: @hover-color;
+    box-shadow: 0 0 4px 0 @hover-color;
   }
+
+  &:active {
+    color: saturate(lighten(@text-color-highlight, 30%), 30%);
+    background: saturate(@hover-color, 30%);
+    box-shadow: 0 0 4px 0 saturate(@hover-color, 30%);
+  }
+
   &.selected,
   &.selected:hover {
     color: @text-color-highlight;
