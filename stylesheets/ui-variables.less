@@ -1,14 +1,14 @@
 // Colors
 
-@text-color: #aaa;
-@text-color-subtle: #555;
+@text-color: #b0b0b0;
+@text-color-subtle: #575757;
 @text-color-highlight: #fff;
-@text-color-selected: @text-color-highlight;
+@text-color-selected: #2e85d0;
 
-@text-color-info: #5293d8;
-@text-color-success: #26c26a;
-@text-color-warning: #ff982d;
-@text-color-error: #c00;
+@text-color-info: #2e85d0;
+@text-color-success: #26c38f;
+@text-color-warning: #ffbc2d;
+@text-color-error: #df5815;
 
 @text-color-ignored: @text-color-subtle;
 @text-color-added: @text-color-success;
@@ -16,25 +16,25 @@
 @text-color-modified: @text-color-warning;
 @text-color-removed: @text-color-error;
 
-@background-color-info: #0098ff;
-@background-color-success: #17ca65;
-@background-color-warning: #ffaa2c;
-@background-color-error: #c00;
-@background-color-highlight: rgba(255, 255, 255, 0.07);
-@background-color-selected: #4182C4;
+@background-color-info: @text-color-info;
+@background-color-success: @text-color-success;
+@background-color-warning: @text-color-warning;
+@background-color-error: @text-color-error;
+@background-color-highlight: rgba(130, 244, 255, 0.08);
+@background-color-selected: @text-color-selected;
 
-@app-background-color: #333;
+@app-background-color: #2b2b2a;
 
-@base-background-color: lighten(@tool-panel-background-color, 5%);
+@base-background-color: @app-background-color;
 @base-border-color: rgba(0, 0, 0, 0.5);
 
-@pane-item-background-color: @base-background-color;
+@pane-item-background-color: @app-background-color;
 @pane-item-border-color: rgba(0, 0, 0, 0.5);
 
-@input-background-color: #212224;
+@input-background-color: @app-background-color;
 @input-border-color: @base-border-color;
 
-@tool-panel-background-color: #1d1f21;
+@tool-panel-background-color: @app-background-color;
 @tool-panel-border-color: @base-border-color;
 
 @inset-panel-background-color: #161719;
@@ -43,7 +43,7 @@
 @panel-heading-background-color: #43484d;
 @panel-heading-border-color: fadein(@base-border-color, 10%);
 
-@overlay-background-color: #202123;
+@overlay-background-color: @app-background-color;
 @overlay-border-color: @background-color-highlight;
 
 @button-background-color: #43484d;

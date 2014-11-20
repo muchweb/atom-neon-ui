@@ -1,12 +1,22 @@
 @import "ui-variables";
 
+@-webkit-keyframes neon-overlay-appearance-glow {
+    50% {
+        box-shadow: 0 0 0px 1px @text-color-selected, 0 0 20px black, 0 0 20px black;
+    }
+}
+@-webkit-keyframes neon-overlay-appearance-move {
+    0% {
+        transform: translateY(-100px) scaleY(0.9) scaleX(0.9);
+    }
+}
+
 .overlay {
   color: @text-color;
   background-color: @overlay-background-color;
   padding: @component-padding;
-  border: 1px solid @overlay-border-color;
-  box-shadow: 0 0 10px @base-border-color;
-  border-radius: @component-border-radius;
+  box-shadow: 0 0 0px 1px transparent, 0 0 20px black, 0 0 20px black;
+  -webkit-animation: neon-overlay-appearance-glow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000), neon-overlay-appearance-move .5s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
   .editor.mini {
     margin-bottom: @component-padding;
@@ -14,13 +24,12 @@
 
   .select-list ol.list-group,
   &.select-list ol.list-group {
-
     background-color: lighten(@overlay-background-color, 3%);
+    overflow-x: hidden;
 
     li {
       padding: @component-padding;
-      border-bottom: 1px solid @overlay-background-color;
-
+      text-align: center;
       &.two-lines { padding: @component-padding/2 @component-padding; }
 
       .status.icon {
