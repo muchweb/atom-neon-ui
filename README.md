@@ -1,12 +1,14 @@
 # Neon UI
 
-**Theme not finished -- In development**
-
 Is your Atom running way too quickly? Looking for a way to make use of all these gigahertz? Want to justify purchase of that gaming PC?
 
 Introducing glowing UI theme, inspired by Enligntenment's Terminology!
 
+![untitled](https://cloud.githubusercontent.com/assets/7157049/5135747/4a873970-7114-11e4-880e-81a13e09be05.gif)
 
 ---
 
-In meantime, you may want to try [Neon Selection](https://atom.io/packages/neon-selection) or [Neon Cursor](https://atom.io/packages/neon-cursor).
+Atom startup is still too quick? See also:
+
+ - [Neon Selection](https://atom.io/packages/neon-selection)
+ - [Neon Cursor](https://atom.io/packages/neon-cursor).
