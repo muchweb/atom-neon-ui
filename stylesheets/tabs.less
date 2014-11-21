@@ -1,30 +1,60 @@
 @import "ui-variables";
-@modified-icon-width: 8px;
 
 @-webkit-keyframes neon-tab-appearance {
     0% {
         transform: translateY(@tab-height);
     }
-    100% {
-        transform: translateY(0px);
+}
+
+@-webkit-keyframes neon-tab-activation {
+    0% {
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 4px -1px @text-color-highlight inset, 0 8px 8px -4px @background-color-info inset, 0 0 8px black;
     }
 }
 
+@modified-icon-width: 8px;
+@tab-skew: 0deg;
+@tab-top-padding: 0px;
+@tab-bottom-border-height: 5px;
+@tab-border: 0px solid @tab-border-color;
+@tab-max-width: 160px;
+
+@tab-height: 30px;
+
 .tab-bar {
-  height: @tab-height;
-  background: @tab-bar-background-color;
-  box-shadow: 0 -8px 8px -8px black inset;
+  background: @app-background-color;
+  height: @tab-height + 10px;
+  overflow: hidden;
+  padding-top: 10px;
 
   .tab {
     position: relative;
-    max-width: 160px;
+    max-width: @tab-max-width;
     height: @tab-height;
     line-height: @tab-height;
+    margin: 0 5px 0 5px;
     color: @text-color;
+    transform: translateY(0px);
     -webkit-animation: neon-tab-appearance 1s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
+    transition: color .1s ease-in;
+    border: none;
+
+    &, &:before, &:after {
+      height: @tab-height;
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      width: 25px;
+      height: @tab-height;
+    }
+
     .close-icon {
-      right: 10px;
+      right: 4px;
       z-index: 3;
       text-align: right;
       line-height: @tab-height;
@@ -32,8 +62,7 @@
       opacity: 0.3;
 
       &:hover {
-        text-shadow: 0 0 4px @tab-close-hover;
-        opacity: 1;
+        color: @text-color-error;
       }
     }
 
@@ -46,7 +75,7 @@
     .title{
       position: relative;
       z-index: 1;
-      padding-left: 30px
+      text-align: center;
     }
   }
 
@@ -55,20 +84,22 @@
     background: @tool-panel-background-color;
     box-shadow: 0 2px 2px -1px @text-color-highlight inset, 0 8px 8px -4px @background-color-info inset, 0 0 8px black;
     color: @text-color-highlight;
+    box-shadow: 0 2px 2px -1px @text-color-highlight inset, 0 8px 8px -4px @background-color-info inset, 0 0 8px black;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-animation: neon-tab-appearance 1s cubic-bezier(0.165, 0.840, 0.440, 1.000), neon-tab-activation 3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
 
-    &>.close-icon {
-      opacity: 0.7;
-
-      &:hover {
-        opacity: 1;
-      }
+    .close-icon {
+      line-height: @tab-height - 1px;
+      color: @text-color-error;
+      text-shadow: 0 0 4px darken(@text-color-error, 10%);
     }
   }
 
   .placeholder {
-    height: @tab-height;
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    pointer-events: none;
     &:after {
-      top: @tab-height;
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height - 2px;
     }
   }
 }

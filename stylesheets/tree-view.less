@@ -9,10 +9,16 @@
   }
 }
 
+.tree-view-resizer {
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+}
+
 .focusable-panel {
   opacity: 1;
-  background: @tab-bar-background-color;
-  box-shadow: 0px 30px 0 0 @tab-bar-background-color inset, -8px 0px 8px -8px black inset;
+  background: @app-background-color;
+  box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
 
   &:focus {
     .selected > .name,
