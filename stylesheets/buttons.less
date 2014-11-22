@@ -4,14 +4,19 @@
 .btn-background (@color, @hover-color, @selected-color, @text-color) {
   color: @text-color;
   background-color: @color;
+  transition: transform .1s ease;
 
   &:focus {
     color: @text-color;
+    box-shadow: 0 0 4px 0 @hover-color;
   }
+
   &:hover {
     color: @text-color-highlight;
+    text-shadow: 0 0 2px @text-color-highlight;
     background: @hover-color;
-    box-shadow: 0 0 4px 0 @hover-color;
+    box-shadow: 0 0 8px 0 @hover-color;
+    transform: scale(1.05);
   }
 
   &:active {
