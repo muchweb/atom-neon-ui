@@ -1,31 +1,54 @@
 @import "ui-variables";
 
-.tree-view {
-  font-size: @font-size;
-  background: @tree-view-background-color;
+@-webkit-keyframes item-appearance {
+    0% {
+        box-shadow: 0 0 0px 0px @background-color-selected inset;
+    }
+    50% {
+        box-shadow: 0 0 16px 0px @background-color-selected inset;
+    }
+}
 
-  .selected:before {
-  	color: @background-color-selected;
-  }
+.tree-view {
+    font-size: @font-size;
+    background: @tree-view-background-color;
+
+    .selected:before {
+        color: @background-color-selected;
+        box-shadow: 0 0 8px 0px @background-color-selected inset;
+        background: fade(@background-color-selected, 10%);
+        -webkit-animation: item-appearance 1s linear;
+    }
 }
 
 .tree-view-resizer {
-  .tree-view-resize-handle {
-    width: 8px;
-  }
+    .tree-view-resize-handle {
+        width: 8px;
+    }
+}
+
+@-webkit-keyframes tree-appearance {
+    0% {
+        text-shadow: 0 0 8px #fff;
+        transform: scale(1.1);
+    }
 }
 
 .focusable-panel {
-  opacity: 1;
-  background: @app-background-color;
-  box-shadow: inset -3px 0 0 rgba(0,0,0, .05);
+    opacity: 1;
+    background: @app-background-color;
 
-  &:focus {
-    .selected > .name,
-    .selected > .name:before,
-    .selected > .list-item > .name,
-    .selected > .list-item > .name:before {
-      color: #fff !important;
+    &:focus {
+        .selected > .name {
+            -webkit-animation: tree-appearance .4s linear;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0);
+        }
+
+        .selected > .name,
+        .selected > .name:before,
+        .selected > .list-item > .name,
+        .selected > .list-item > .name:before {
+            color: #fff !important;
+        }
     }
-  }
 }
