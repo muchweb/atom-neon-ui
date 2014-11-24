@@ -1,7 +1,7 @@
 {
   "name": "atom-neon-ui",
   "theme": "ui",
-  "version": "0.37.0",
+  "version": "0.37.1",
   "description": "(In development) Glowing UI, inspired by Enligntenment's Terminology",
   "license": "MIT",
   "repository": "https://github.com/muchweb/atom-neon-ui",
